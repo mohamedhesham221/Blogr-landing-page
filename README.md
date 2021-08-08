@@ -1,6 +1,8 @@
 # Frontend Mentor - Blogr landing page
 
 ![Design preview for the Blogr landing page coding challenge](./design/desktop-preview.jpg)
+### Live
+[preview](https://blogr-landing-page2021.netlify.app/)
 
 ## Welcome! 👋
 
