@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link href="https://fonts.googleapis.com/css2?family=Overpass:wght@200&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="vars.css">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | [Blogr]</title>
+</head>
+<body>
+  <div class="nav" id="navbar">
+    <ul class="nav__list">
+      <li class="nav__list--item" onclick="showDropdown(0);">Product
+        <ul class="dropdown">
+          <li>Overview</li>
+          <li>Pricing</li>
+          <li>Marketplace</li>
+          <li>Features</li>
+          <li>Integrations</li>
+        </ul>
+      </li>
+      <li class="nav__list--item" onclick="showDropdown(1);">Company
+        <ul class="dropdown">
+          <li>About</li>
+          <li>Team</li>
+          <li>Blog</li>
+          <li>Careers</li>
+        </ul>
+      </li>
+      <li class="nav__list--item" onclick="showDropdown(2);">Connect
+        <ul class="dropdown">
+          <li>Contact</li>
+          <li>Newsletter</li>
+          <li>LinkedIn</li>
+        </ul>
+      </li>
+    </ul>
+      <button class="nav__login">Login</button>
+      <button class="nav__sign">Sign Up</button>
+  </div>
+  <div class="intro">
+    <img src="images/bg-pattern-intro.svg" alt="pattern" class="intro__pattern">
+    <div class="intro__header">
+      <img src="images/logo.svg" alt="logo" class="intro__logo">
+      <img src="images/icon-hamburger.svg" alt="toggle nav" class="intro__toggle-nav" id="toggle" onclick="changeSrc();">
+    </div>
+    <div class="intro__txt">
+      <p class="intro__txt--heading">A modern publishing platform</p>
+      <p class="intro__txt--sentence">Grow your audience and build your online brand</p>
+      <button class="intro__txt--start">Start for Free</button><button class="intro__txt--free">Learn More</button>
+    </div>
+  </div>
+  <div class="designed-future">
+    <p class="designed-future__heading">Designed for the future</p>
+    <img src="images/illustration-editor-mobile.svg" alt="pic" class="designed-future__img">
+    <p class="designed-future__heading">Introducing an extensible editor</p>
+    <p class="designed-future__txt">Blogr features an exceedingly intuitive interface which lets you focus on one thing: creating content. 
+      The editor supports management of multiple blogs and allows easy manipulation of embeds such as images, 
+      videos, and Markdown. Extensibility with plugins and themes provide easy ways to add functionality or 
+      change the looks of a blog.
+    </p>
+    <p class="designed-future__heading">Robust content management</p>
+    <p class="designed-future__txt">  Flexible content management enables users to easily move through posts. Increase the usability of your blog 
+      by adding customized categories, sections, format, or flow. With this functionality, you’re in full control.    
+    </p>
+  </div>
+  <div class="state-art">
+    <img src="images/illustration-phones.svg" alt="phones" class="state-art__phones">
+    <p class="state-art__heading">State of the Art Infrastructure</p>
+    <p class="state-art__txt">With reliability and speed in mind, worldwide data centers provide the backbone for ultra-fast connectivity. 
+      This ensures your site will load instantly, no matter where your readers are, keeping your site competitive.
+    </p>
+  </div>
+  <div class="free-open-simple">
+    <img src="images/illustration-laptop-mobile.svg" alt="laptop" class="free-open-simple__img">
+    <p class="free-open-simple__heading">Free, open, simple</p>
+    <p class="free-open-simple__txt">Blogr is a free and open source application backed by a large community of helpful developers. It supports 
+      features such as code syntax highlighting, RSS feeds, social media integration, third-party commenting tools, 
+      and works seamlessly with Google Analytics. The architecture is clean and is relatively easy to learn.
+    </p>
+  </div>
+  <div class="powerful">
+    <p class="powerful__heading">Powerful tooling</p>
+    <p class="powerful__txt">Batteries included. We built a simple and straightforward CLI tool that makes customization and deployment a breeze, but
+      capable of producing even the most complicated sites.
+    </p>
+  </div>
+  <div class="footer">
+    <img src="images/logo.svg" alt="logo" class="footer__logo">
+    <div class="footer__map">
+      <div class="footer__map--item">
+        <p class="footer__map--item__heading">Product</p>
+        <ul class="footer__map--item__list">
+          <li>Overview</li>
+          <li>Pricing</li>
+          <li>Marketplace</li>
+          <li>Features</li>
+          <li>Integrations</li>
+        </ul>
+      </div>
+      <div class="footer__map--item">
+        <p class="footer__map--item__heading">Company</p>
+        <ul class="footer__map--item__list">
+          <li>About</li>
+          <li>Team</li>
+          <li>Blog</li>
+          <li>Careers</li>
+        </ul>
+      </div>
+      <div class="footer__map--item">
+        <p class="footer__map--item__heading">Connect</p>
+        <ul class="footer__map--item__list">
+          <li>Contact</li>
+          <li>Newsletter</li>
+          <li>LinkedIn</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+    let toggle = document.getElementById("toggle"),
+        hamburger = "images/icon-hamburger.svg",
+        close = "images/icon-close.svg",
+        nav = document.getElementById("navbar"),
+        dropdowns = document.querySelectorAll(".nav__list--item ul"),
+        change = false;
+
+    function changeSrc() {
+      change = !change;
+        if(change) {
+          toggle.src = close;
+          nav.style.transform = "scale(1)";
+        } else {
+          toggle.src = hamburger;
+          nav.style.transform = "scale(0)";
+        }
+    }
+
+    function showDropdown(el) {
+      for (let i = 0; i < dropdowns.length; i++) {
+        const dropdown = dropdowns[i];
+        if (el === i) {
+            dropdown.classList.toggle("isVisible");
+        } else {
+          dropdown.classList.remove("isVisible");
+        }
+        
+      }
+    }
+
+      (function() {
+        let editorSrc =  document.querySelector(".designed-future__img"),
+          laptopSrc = document.querySelector(".free-open-simple__img");
+      if (window.innerWidth >= 1024) {
+        editorSrc.src = "images/illustration-editor-desktop.svg";
+        laptopSrc.src = "images/illustration-laptop-desktop.svg";
+      }
+    }());
+
+  </script>
+</body>
+</html>
